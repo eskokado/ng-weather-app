@@ -1,19 +1,18 @@
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WeatherService {
-  private apiKey = 'cc93eb0cd213252819b27dac19c36806';
+  private apiKey = 'f33c6c78761ae86ab60cb9c640ceff7a';
 
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getWeatherDatas(cityName: string): Observable<any> {
     return this.http.get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&mode=json&appid=${this.apiKey}`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&mode=json&appid=${this.apiKey}`,
       {}
     );
   }
